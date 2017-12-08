@@ -1,4 +1,6 @@
+# Feature Pyramid Networks for Object Detection
 A Tensorflow implementation of FPN detection framework.    
+The paper references [Feature Pyramid Networks for Object Detection](https://arxiv.org/abs/1612.03144)    
 Rotation detection method baesd on FPN reference [R2CNN](https://github.com/yangxue0827/R2CNN_FPN_Tensorflow) and [R-DFPN](https://github.com/yangxue0827/R-DFPN_FPN_Tensorflow)  
 
 # Configuration Environment
