@@ -3,7 +3,7 @@ from __future__ import division, print_function, absolute_import
 import os
 
 # root path
-ROOT_PATH = os.path.abspath('/yangxue/FPN_v2.0')
+ROOT_PATH = os.path.abspath(r'C:\Users\yangxue\Documents\GitHub\FPN_Tensorflow')
 
 # pretrain weights path
 TEST_SAVE_PATH = ROOT_PATH + '/tools/test_result'
@@ -17,7 +17,7 @@ BASE_ANCHOR_SIZE_LIST = [32, 64, 128, 256, 512]
 LEVEL = ['P2', 'P3', 'P4', 'P5', "P6"]
 STRIDE = [4, 8, 16, 32, 64]
 ANCHOR_SCALES = [1.]
-ANCHOR_RATIOS = [1, 1 / 2., 2., 1 / 3., 1.5, 3.0, 1 / 1.5]
+ANCHOR_RATIOS = [1, 1 / 2., 2., 1 / 3., 3.0, 1.5, 1 / 1.5]
 SCALE_FACTORS = [10., 10., 5., 5.]
 OUTPUT_STRIDE = 16
 SHORT_SIDE_LEN = 600
@@ -47,9 +47,9 @@ ROI_SIZE = 14
 ROI_POOL_KERNEL_SIZE = 2
 USE_DROPOUT = False
 KEEP_PROB = 0.5
-FAST_RCNN_NMS_IOU_THRESHOLD = 0.1
-FAST_RCNN_NMS_MAX_BOXES_PER_CLASS = 20
-FINAL_SCORE_THRESHOLD = 0.95
+FAST_RCNN_NMS_IOU_THRESHOLD = 0.4
+FAST_RCNN_NMS_MAX_BOXES_PER_CLASS = 100
+FINAL_SCORE_THRESHOLD = 0.3
 FAST_RCNN_IOU_POSITIVE_THRESHOLD = 0.45
 FAST_RCNN_MINIBATCH_SIZE = 256
 FAST_RCNN_POSITIVE_RATE = 0.25

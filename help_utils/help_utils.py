@@ -59,32 +59,32 @@ def draw_box_cv(img, boxes, labels, scores):
                           thickness=2)
             category = LABEl_NAME_MAP[label]
 
-            if scores is not None:
-                cv2.rectangle(img,
-                              pt1=(xmin, ymin),
-                              pt2=(xmin + 120, ymin + 15),
-                              color=color,
-                              thickness=-1)
-                cv2.putText(img,
-                            text=category+": "+str(scores[i]),
-                            org=(xmin, ymin+10),
-                            fontFace=1,
-                            fontScale=1,
-                            thickness=2,
-                            color=(color[1], color[2], color[0]))
-            else:
-                cv2.rectangle(img,
-                              pt1=(xmin, ymin),
-                              pt2=(xmin + 50, ymin + 15),
-                              color=color,
-                              thickness=-1)
-                cv2.putText(img,
-                            text=category,
-                            org=(xmin, ymin + 10),
-                            fontFace=1,
-                            fontScale=1,
-                            thickness=2,
-                            color=(color[1], color[2], color[0]))
+            # if scores is not None:
+            #     cv2.rectangle(img,
+            #                   pt1=(xmin, ymin),
+            #                   pt2=(xmin + 120, ymin + 15),
+            #                   color=color,
+            #                   thickness=-1)
+            #     cv2.putText(img,
+            #                 text=category+": "+str(scores[i]),
+            #                 org=(xmin, ymin+10),
+            #                 fontFace=1,
+            #                 fontScale=1,
+            #                 thickness=2,
+            #                 color=(color[1], color[2], color[0]))
+            # else:
+            #     cv2.rectangle(img,
+            #                   pt1=(xmin, ymin),
+            #                   pt2=(xmin + 50, ymin + 15),
+            #                   color=color,
+            #                   thickness=-1)
+            #     cv2.putText(img,
+            #                 text=category,
+            #                 org=(xmin, ymin + 10),
+            #                 fontFace=1,
+            #                 fontScale=1,
+            #                 thickness=2,
+            #                 color=(color[1], color[2], color[0]))
     cv2.putText(img,
                 text=str(num_of_object),
                 org=((img.shape[1]) // 2, (img.shape[0]) // 2),
