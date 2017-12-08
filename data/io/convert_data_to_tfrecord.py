@@ -9,12 +9,13 @@ import tensorflow as tf
 import glob
 import cv2
 from help_utils.tools import *
+from libs.label_name_dict.label_dict import *
 
-tf.app.flags.DEFINE_string('VOC_dir', '/yangxue/VOC2007/', 'Voc dir')
+tf.app.flags.DEFINE_string('VOC_dir', None, 'Voc dir')
 tf.app.flags.DEFINE_string('xml_dir', 'Annotations', 'xml dir')
 tf.app.flags.DEFINE_string('image_dir', 'JPEGImages', 'image dir')
 tf.app.flags.DEFINE_string('save_name', 'train', 'save name')
-tf.app.flags.DEFINE_string('save_dir', cfgs.ROO_PATH + '/data/tfrecords/', 'save name')
+tf.app.flags.DEFINE_string('save_dir', cfgs.ROOT_PATH + '/data/tfrecords/', 'save name')
 tf.app.flags.DEFINE_string('img_format', '.jpg', 'format of image')
 tf.app.flags.DEFINE_string('dataset', 'car', 'dataset')
 FLAGS = tf.app.flags.FLAGS
@@ -57,7 +58,7 @@ def read_xml_gtbox_and_label(xml_path):
             label = None
             for child_item in child_of_root:
                 if child_item.tag == 'name':
-                    label = int(child_item.text)  # NAME_LABEL_MAP[child_item.text]
+                    label = NAME_LABEL_MAP[child_item.text]
                 if child_item.tag == 'bndbox':
                     tmp_box = []
                     for node in child_item:
