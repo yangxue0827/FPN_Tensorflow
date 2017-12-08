@@ -43,14 +43,13 @@ def inference():
         # ***********************************************************************************************
         # *                                         share net                                           *
         # ***********************************************************************************************
-        with tf.name_scope(cfgs.NET_NAME):
-            _, share_net = get_network_byname(net_name=cfgs.NET_NAME,
-                                              inputs=img_batch,
-                                              num_classes=None,
-                                              is_training=True,
-                                              output_stride=None,
-                                              global_pool=False,
-                                              spatial_squeeze=False)
+        _, share_net = get_network_byname(net_name=cfgs.NET_NAME,
+                                          inputs=img_batch,
+                                          num_classes=None,
+                                          is_training=True,
+                                          output_stride=None,
+                                          global_pool=False,
+                                          spatial_squeeze=False)
         # ***********************************************************************************************
         # *                                            RPN                                              *
         # ***********************************************************************************************
@@ -58,7 +57,7 @@ def inference():
                             inputs=img_batch,
                             gtboxes_and_label=None,
                             is_training=False,
-                            share_head=False,
+                            share_head=cfgs.SHARE_HEAD,
                             share_net=share_net,
                             stride=cfgs.STRIDE,
                             anchor_ratios=cfgs.ANCHOR_RATIOS,
