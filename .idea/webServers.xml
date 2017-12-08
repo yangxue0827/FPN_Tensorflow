@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="31633d4d-971d-4c94-9001-bdbc61d99c42" name="FPN_v2.0" url="http://192.168.50.252">
+        <fileTransfer host="192.168.50.252" port="20022" rootFolder="/yangxue/FPN_v2.0" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" />
+          </advancedOptions>
+          <option name="port" value="20022" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
