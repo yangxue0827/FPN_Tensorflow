@@ -1,3 +1,8 @@
+# -*- coding: utf-8 -*-
+from __future__ import division, print_function, absolute_import
+import sys
+
+sys.path.append('../../')
 import shutil
 import os
 import random
@@ -8,14 +13,12 @@ def mkdir(path):
     if not os.path.exists(path):
         os.makedirs(path)
 
+divide_rate = 0.8
 
-divide_rate = 0.7
+root_path = '/mnt/ExtraDisk/yangxue/data_ship_clean'
 
-image_path = '/mnt/ExtraDisk/yangxue/data_ship1/VOCdevkit/JPEGImages'
-xml_path = '/mnt/ExtraDisk/yangxue/data_ship1/VOCdevkit/Annotations'
-
-image_output = '/mnt/ExtraDisk/yangxue/data_ship1'
-xml_output = '/mnt/ExtraDisk/yangxue/data_ship1'
+image_path = root_path + '/VOCdevkit/JPEGImages'
+xml_path = root_path + '/VOCdevkit/Annotations'
 
 image_list = os.listdir(image_path)
 
@@ -26,21 +29,19 @@ random.shuffle(image_name)
 train_image = image_name[:int(math.ceil(len(image_name)) * divide_rate)]
 test_image = image_name[int(math.ceil(len(image_name)) * divide_rate):]
 
-image_output_train = os.path.join(image_output, 'VOCdevkit_train/JPEGImages')
+image_output_train = os.path.join(root_path, 'VOCdevkit_train/JPEGImages')
 mkdir(image_output_train)
-image_output_test = os.path.join(image_output, 'VOCdevkit_test/JPEGImages')
+image_output_test = os.path.join(root_path, 'VOCdevkit_test/JPEGImages')
 mkdir(image_output_test)
 
-xml_train = os.path.join(xml_output, 'VOCdevkit_train/Annotations')
+xml_train = os.path.join(root_path, 'VOCdevkit_train/Annotations')
 mkdir(xml_train)
-xml_test = os.path.join(xml_output, 'VOCdevkit_test/Annotations')
+xml_test = os.path.join(root_path, 'VOCdevkit_test/Annotations')
 mkdir(xml_test)
 
 
 count = 0
 for i in train_image:
-    # temp1=os.path.join(image_path, i + '.tif')
-    # temp2=image_output_train
     shutil.copy(os.path.join(image_path, i + '.tif'), image_output_train)
     shutil.copy(os.path.join(xml_path, i + '.xml'), xml_train)
     if count % 1000 == 0:
