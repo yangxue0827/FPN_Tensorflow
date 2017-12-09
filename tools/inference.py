@@ -38,7 +38,8 @@ def inference():
         img_plac = tf.placeholder(shape=[None, None, 3], dtype=tf.uint8)
 
         img_tensor = tf.cast(img_plac, tf.float32) - tf.constant([103.939, 116.779, 123.68])
-        img_batch = image_preprocess.short_side_resize_for_inference_data(img_tensor, target_shortside_len=600)
+        img_batch = image_preprocess.short_side_resize_for_inference_data(img_tensor,
+                                                                          target_shortside_len=cfgs.SHORT_SIDE_LEN)
 
         # ***********************************************************************************************
         # *                                         share net                                           *
@@ -113,7 +114,11 @@ def inference():
         )
 
         restorer, restore_ckpt = restore_model.get_restorer()
-        with tf.Session() as sess:
+
+        config = tf.ConfigProto()
+        # config.gpu_option.per_process_gpu_memory_fraction = 0.5
+        config.gpu_option.allow_growth = True
+        with tf.Session(config=config) as sess:
             sess.run(init_op)
             if not restorer is None:
                 restorer.restore(sess, restore_ckpt)
