@@ -1,15 +1,15 @@
 <annotation>
     <folder>xxx</folder>
-    <filename>查尔斯顿空军基地_2013-02-09%8100%8000.tif</filename>
+    <filename>sample.tif</filename>
     <source>
         <database>xxxx</database>
-        <annotation>IECAS</annotation>
-        <image>IECAS</image>
+        <annotation>xxxx</annotation>
+        <image>xxxx</image>
         <flickrid>0</flickrid>
     </source>
     <owner>
-        <flickrid>IECAS</flickrid>
-        <name>IECAS</name>
+        <flickrid>xxxx</flickrid>
+        <name>xxxx</name>
     </owner>
     <size>
         <width>1000</width>
@@ -18,7 +18,7 @@
     </size>
     <segmented>0</segmented>
     <object>
-        <name>ship</name>
+        <name>airplane</name>
         <pose>Unknown</pose>
         <truncated>1</truncated>
         <difficult>0</difficult>
@@ -30,7 +30,7 @@
         </bndbox>
     </object>
     <object>
-        <name>ship</name>
+        <name>airplane</name>
         <pose>Unknown</pose>
         <truncated>1</truncated>
         <difficult>0</difficult>
@@ -42,7 +42,7 @@
         </bndbox>
     </object>
     <object>
-        <name>ship</name>
+        <name>airplane</name>
         <pose>Unknown</pose>
         <truncated>1</truncated>
         <difficult>0</difficult>
@@ -54,7 +54,7 @@
         </bndbox>
     </object>
     <object>
-        <name>ship</name>
+        <name>airplane</name>
         <pose>Unknown</pose>
         <truncated>1</truncated>
         <difficult>0</difficult>
@@ -66,7 +66,7 @@
         </bndbox>
     </object>
     <object>
-        <name>ship</name>
+        <name>airplane</name>
         <pose>Unknown</pose>
         <truncated>1</truncated>
         <difficult>0</difficult>
@@ -78,7 +78,7 @@
         </bndbox>
     </object>
     <object>
-        <name>ship</name>
+        <name>airplane</name>
         <pose>Unknown</pose>
         <truncated>1</truncated>
         <difficult>0</difficult>
@@ -90,7 +90,7 @@
         </bndbox>
     </object>
     <object>
-        <name>ship</name>
+        <name>airplane</name>
         <pose>Unknown</pose>
         <truncated>1</truncated>
         <difficult>0</difficult>
@@ -102,7 +102,7 @@
         </bndbox>
     </object>
     <object>
-        <name>ship</name>
+        <name>airplane</name>
         <pose>Unknown</pose>
         <truncated>1</truncated>
         <difficult>0</difficult>
@@ -114,7 +114,7 @@
         </bndbox>
     </object>
     <object>
-        <name>ship</name>
+        <name>airplane</name>
         <pose>Unknown</pose>
         <truncated>1</truncated>
         <difficult>0</difficult>
@@ -126,7 +126,7 @@
         </bndbox>
     </object>
     <object>
-        <name>ship</name>
+        <name>airplane</name>
         <pose>Unknown</pose>
         <truncated>1</truncated>
         <difficult>0</difficult>
@@ -138,7 +138,7 @@
         </bndbox>
     </object>
     <object>
-        <name>ship</name>
+        <name>airplane</name>
         <pose>Unknown</pose>
         <truncated>1</truncated>
         <difficult>0</difficult>
@@ -150,7 +150,7 @@
         </bndbox>
     </object>
     <object>
-        <name>ship</name>
+        <name>airplane</name>
         <pose>Unknown</pose>
         <truncated>1</truncated>
         <difficult>0</difficult>
@@ -162,7 +162,7 @@
         </bndbox>
     </object>
     <object>
-        <name>ship</name>
+        <name>airplane</name>
         <pose>Unknown</pose>
         <truncated>1</truncated>
         <difficult>0</difficult>
@@ -174,7 +174,7 @@
         </bndbox>
     </object>
     <object>
-        <name>ship</name>
+        <name>airplane</name>
         <pose>Unknown</pose>
         <truncated>1</truncated>
         <difficult>0</difficult>
@@ -186,7 +186,7 @@
         </bndbox>
     </object>
     <object>
-        <name>ship</name>
+        <name>airplane</name>
         <pose>Unknown</pose>
         <truncated>1</truncated>
         <difficult>0</difficult>
@@ -198,7 +198,7 @@
         </bndbox>
     </object>
     <object>
-        <name>ship</name>
+        <name>airplane</name>
         <pose>Unknown</pose>
         <truncated>1</truncated>
         <difficult>0</difficult>
@@ -210,7 +210,7 @@
         </bndbox>
     </object>
     <object>
-        <name>ship</name>
+        <name>airplane</name>
         <pose>Unknown</pose>
         <truncated>1</truncated>
         <difficult>0</difficult>
@@ -222,7 +222,7 @@
         </bndbox>
     </object>
     <object>
-        <name>ship</name>
+        <name>airplane</name>
         <pose>Unknown</pose>
         <truncated>1</truncated>
         <difficult>0</difficult>
@@ -234,7 +234,7 @@
         </bndbox>
     </object>
     <object>
-        <name>ship</name>
+        <name>airplane</name>
         <pose>Unknown</pose>
         <truncated>1</truncated>
         <difficult>0</difficult>
@@ -246,7 +246,7 @@
         </bndbox>
     </object>
     <object>
-        <name>ship</name>
+        <name>airplane</name>
         <pose>Unknown</pose>
         <truncated>1</truncated>
         <difficult>0</difficult>
@@ -258,7 +258,7 @@
         </bndbox>
     </object>
     <object>
-        <name>ship</name>
+        <name>airplane</name>
         <pose>Unknown</pose>
         <truncated>1</truncated>
         <difficult>0</difficult>
@@ -270,7 +270,7 @@
         </bndbox>
     </object>
     <object>
-        <name>ship</name>
+        <name>airplane</name>
         <pose>Unknown</pose>
         <truncated>1</truncated>
         <difficult>0</difficult>
@@ -282,7 +282,7 @@
         </bndbox>
     </object>
     <object>
-        <name>ship</name>
+        <name>airplane</name>
         <pose>Unknown</pose>
         <truncated>1</truncated>
         <difficult>0</difficult>
@@ -294,7 +294,7 @@
         </bndbox>
     </object>
     <object>
-        <name>ship</name>
+        <name>airplane</name>
         <pose>Unknown</pose>
         <truncated>1</truncated>
         <difficult>0</difficult>
@@ -306,7 +306,7 @@
         </bndbox>
     </object>
     <object>
-        <name>ship</name>
+        <name>airplane</name>
         <pose>Unknown</pose>
         <truncated>1</truncated>
         <difficult>0</difficult>
@@ -318,7 +318,7 @@
         </bndbox>
     </object>
     <object>
-        <name>ship</name>
+        <name>airplane</name>
         <pose>Unknown</pose>
         <truncated>1</truncated>
         <difficult>0</difficult>
