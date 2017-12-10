@@ -99,6 +99,7 @@ def draw_boxes_with_scores(img_batch, boxes, scores):
                         fontScale=1,
                         thickness=2,
                         color=(color[1], color[2], color[0]))
+            num_of_object += 1
         cv2.putText(img,
                     text=str(num_of_object),
                     org=((img.shape[1]) // 2, (img.shape[0]) // 2),
