@@ -131,7 +131,7 @@ def train():
 
         lr = tf.train.piecewise_constant(global_step,
                                          boundaries=[np.int64(20000), np.int64(40000)],
-                                         values=[cfgs.LR, cfgs.LR/10, cfgs.LR/100])
+                                         values=[cfgs.LR, cfgs.LR / 10, cfgs.LR / 100])
         tf.summary.scalar('lr', lr)
         optimizer = tf.train.MomentumOptimizer(lr, momentum=cfgs.MOMENTUM)
 
