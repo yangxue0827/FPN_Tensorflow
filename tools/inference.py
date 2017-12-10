@@ -39,7 +39,8 @@ def inference():
 
         img_tensor = tf.cast(img_plac, tf.float32) - tf.constant([103.939, 116.779, 123.68])
         img_batch = image_preprocess.short_side_resize_for_inference_data(img_tensor,
-                                                                          target_shortside_len=cfgs.SHORT_SIDE_LEN)
+                                                                          target_shortside_len=cfgs.SHORT_SIDE_LEN,
+                                                                          is_resize=True)
 
         # ***********************************************************************************************
         # *                                         share net                                           *
