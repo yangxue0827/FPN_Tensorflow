@@ -28,7 +28,7 @@ def test(img_num):
         # img = tf.placeholder(shape=[None, None, 3], dtype=tf.uint8)
 
         img_name_batch, img_batch, gtboxes_and_label_batch, num_objects_batch = \
-            next_batch(dataset_name='pascal',
+            next_batch(dataset_name=cfgs.DATASET_NAME,
                        batch_size=cfgs.BATCH_SIZE,
                        shortside_len=cfgs.SHORT_SIDE_LEN,
                        is_training=False)
