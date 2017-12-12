@@ -51,7 +51,7 @@
       <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tools/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1404">
+            <state relative-caret-position="52">
               <caret line="30" column="53" selection-start-line="30" selection-start-column="53" selection-end-line="30" selection-end-column="53" />
               <folding />
             </state>
@@ -83,9 +83,11 @@
       <file leaf-file-name="build_fast_rcnn.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/libs/fast_rcnn/build_fast_rcnn.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="884">
-              <caret line="276" column="63" selection-start-line="266" selection-start-column="14" selection-end-line="276" selection-end-column="63" />
-              <folding />
+            <state relative-caret-position="934">
+              <caret line="273" column="93" selection-start-line="273" selection-start-column="93" selection-end-line="273" selection-end-column="93" />
+              <folding>
+                <element signature="e#25#63#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -123,8 +125,8 @@
       <file leaf-file-name="train.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tools/train.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="10192">
-              <caret line="199" column="28" selection-start-line="199" selection-start-column="28" selection-end-line="199" selection-end-column="28" />
+            <state relative-caret-position="914">
+              <caret line="205" column="97" selection-start-line="205" selection-start-column="97" selection-end-line="205" selection-end-column="97" />
               <folding>
                 <element signature="e#24#62#0" expanded="true" />
               </folding>
@@ -1059,14 +1061,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/libs/configs/cfgs_airplane_v1.py" />
-    <entry file="file://$PROJECT_DIR$/tools/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1404">
-          <caret line="30" column="53" selection-start-line="30" selection-start-column="53" selection-end-line="30" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/libs/configs/cfgs.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="988">
@@ -1126,16 +1120,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tools/train.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10192">
-          <caret line="199" column="28" selection-start-line="199" selection-start-column="28" selection-end-line="199" selection-end-column="28" />
-          <folding>
-            <element signature="e#24#62#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/io/read_tfrecord.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2600">
@@ -1144,11 +1128,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tools/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="30" column="53" selection-start-line="30" selection-start-column="53" selection-end-line="30" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/train.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="914">
+          <caret line="205" column="97" selection-start-line="205" selection-start-column="97" selection-end-line="205" selection-end-column="97" />
+          <folding>
+            <element signature="e#24#62#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/libs/fast_rcnn/build_fast_rcnn.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="276" column="63" selection-start-line="266" selection-start-column="14" selection-end-line="276" selection-end-column="63" />
-          <folding />
+        <state relative-caret-position="934">
+          <caret line="273" column="93" selection-start-line="273" selection-start-column="93" selection-end-line="273" selection-end-column="93" />
+          <folding>
+            <element signature="e#25#63#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

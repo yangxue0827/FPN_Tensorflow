@@ -12,6 +12,7 @@ from libs.losses import losses
 from help_utils.help_utils import print_tensors
 from libs.box_utils.show_box_in_tensor import *
 from libs.box_utils.visualization import roi_visualize
+from libs.configs import cfgs
 
 DEBUG = False
 
@@ -264,17 +265,18 @@ class FastRCNN(object):
             tf.summary.image('/positive_proposals', positive_proposals_in_img)
             tf.summary.image('/negative_proposals', negative_proposals_in_img)
 
-            # minibatch_decode_boxes = encode_and_decode.decode_boxes(encode_boxes=minibatch_encode_boxes,
-            #                                                         reference_boxes=minibatch_reference_boxes,
-            #                                                         scale_factors=self.scale_factors)
-            #
-            # minibatch_softmax_scores = tf.gather(slim.softmax(self.fast_rcnn_scores), minibatch_indices)
-            # top_k_scores, top_k_indices = tf.nn.top_k(minibatch_softmax_scores[:, 1], k=5)
-            #
-            # top_detections_in_img = draw_boxes_with_scores(self.img_batch,
-            #                                                boxes=tf.gather(minibatch_decode_boxes, top_k_indices),
-            #                                                scores=top_k_scores)
-            # tf.summary.image('/top_5', top_detections_in_img)
+            if cfgs.CLASS_NUM:
+                minibatch_decode_boxes = encode_and_decode.decode_boxes(encode_boxes=minibatch_encode_boxes,
+                                                                        reference_boxes=minibatch_reference_boxes,
+                                                                        scale_factors=self.scale_factors)
+
+                minibatch_softmax_scores = tf.gather(slim.softmax(self.fast_rcnn_scores), minibatch_indices)
+                top_k_scores, top_k_indices = tf.nn.top_k(minibatch_softmax_scores[:, 1], k=5)
+
+                top_detections_in_img = draw_boxes_with_scores(self.img_batch,
+                                                               boxes=tf.gather(minibatch_decode_boxes, top_k_indices),
+                                                               scores=top_k_scores)
+                tf.summary.image('/top_5', top_detections_in_img)
 
             # encode gtboxes
             minibatch_encode_gtboxes = \
