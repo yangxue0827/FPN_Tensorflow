@@ -8,6 +8,12 @@ If useful to you, please star to support my work. Thanks.
 ubuntu(Encoding problems may occur on windows) + python2 + tensorflow1.2 + cv2 + cuda8.0 + GeForce GTX 1080      
 You can also use docker environment, command: docker push yangxue2docker/tensorflow3_gpu_cv2_sshd:v1.0     
 
+# Installation    
+  Clone the repository    
+  ```Shell    
+  git clone https://github.com/yangxue0827/FPN_Tensorflow.git    
+  ```       
+
 # Make tfrecord   
 The image name is best in English.   
 Image size w = 1000, h = 600.    
@@ -22,28 +28,32 @@ VOCdevkit
 >>Annotation   
 >>JPEGImages   
 
-python ./data/io/convert_data_to_tfrecord.py --VOC_dir='***/VOCdevkit/VOCdevkit_train/' --save_name='train' --img_format='.jpg' --dataset='ship'
+cd $FPN_ROOT/data/io/  
+python convert_data_to_tfrecord.py --VOC_dir='***/VOCdevkit/VOCdevkit_train/' --save_name='train' --img_format='.jpg' --dataset='ship'
 
-# Demo  
-1、Unzip the weight ./output/res101_trained_weights/*.rar   
-2、put images in ./tools/inference_image  
-3、python ./tools/inference.py   
+# Demo   
+1、Unzip the weight $FPN_ROOT/output/res101_trained_weights/*.rar    
+2、put images in $FPN_ROOT/tools/inference_image   
+3、Configure parameters in $FPN_ROOT/libs/configs/cfgs.py and modify the project's root directory 
+4、cd $FPN_ROOT/tools
+5、python inference.py   
 
 # Train
-1、Configure parameters in ./libs/configs/cfgs.py and modify the project's root directory    
-2、Modify ./libs/lable_name_dict/***_dict.py, corresponding to the number of categories in the configuration file    
-3、download pretrain weight([resnet_v1_101_2016_08_28.tar.gz](http://download.tensorflow.org/models/resnet_v1_101_2016_08_28.tar.gz) or [resnet_v1_50_2016_08_28.tar.gz](http://download.tensorflow.org/models/resnet_v1_50_2016_08_28.tar.gz)) from [here](https://github.com/yangxue0827/models/tree/master/slim), then extract to folder ./data/pretrained_weights    
-4、python ./tools/train.py
+1、Modify $FPN_ROOT/libs/lable_name_dict/***_dict.py, corresponding to the number of categories in the configuration file    
+2、download pretrain weight([resnet_v1_101_2016_08_28.tar.gz](http://download.tensorflow.org/models/resnet_v1_101_2016_08_28.tar.gz) or [resnet_v1_50_2016_08_28.tar.gz](http://download.tensorflow.org/models/resnet_v1_50_2016_08_28.tar.gz)) from [here](https://github.com/yangxue0827/models/tree/master/slim), then extract to folder $FPN_ROOT/data/pretrained_weights    
+3、cd $FPN_ROOT/tools
+4、python train.py
 
 # Test tfrecord     
-mkdir test_result    
-python ./tools/test.py  
+cd $FPN_ROOT/tools    
+python $FPN_ROOT/tools/test.py  
 
-# eval    
-python ./tools/ship_eval.py
+# eval  
+cd $FPN_ROOT/tools   
+python ship_eval.py
 
 # Summary   
-tensorboard --logdir=./output/res101_summary/   
+tensorboard --logdir=$FPN_ROOT/output/res101_summary/   
 ![01](output/res101_summary/fast_rcnn_loss.bmp) 
 ![02](output/res101_summary/rpn_loss.bmp) 
 ![03](output/res101_summary/total_loss.bmp) 
