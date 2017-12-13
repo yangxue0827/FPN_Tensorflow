@@ -200,6 +200,24 @@ def voc_ap(rec, prec, use_07_metric=False):
     return ap
 
 
+def get_single_label_dict(predict_dict, gtboxes_dict, label):
+    rboxes = {}
+    gboxes = {}
+    rbox_images = predict_dict.keys()
+    for i in range(len(rbox_images)):
+        rbox_image = rbox_images[i]
+        for pre_box in predict_dict[rbox_image]:
+            if pre_box['name'] == label and len(pre_box['bbox']) != 0:
+                rboxes[rbox_image] = [pre_box]
+
+                gboxes[rbox_image] = []
+
+                for gt_box in gtboxes_dict[rbox_image]:
+                    if gt_box['name'] == label:
+                        gboxes[rbox_image].append(gt_box)
+    return rboxes, gboxes
+
+
 def eval(rboxes, gboxes, iou_th, use_07_metric):
     rbox_images = rboxes.keys()
     fp = np.zeros(len(rbox_images))
@@ -208,7 +226,7 @@ def eval(rboxes, gboxes, iou_th, use_07_metric):
 
     for i in range(len(rbox_images)):
         rbox_image = rbox_images[i]
-        if len(rboxes[rbox_image]) > 0:
+        if len(rboxes[rbox_image][0]['bbox']) > 0:
 
             rbox_lists = np.array(rboxes[rbox_image][0]['bbox'])
             if len(gboxes[rbox_image]) > 0:
@@ -238,16 +256,16 @@ def eval(rboxes, gboxes, iou_th, use_07_metric):
                     jmax = np.argmax(overlaps)
                     if ovmax > iou_th:
                         if gbox_list[jmax, -1] == 0:
-                            tp[i] = tp[i] + 1
+                            tp[i] += 1
                             gbox_list[jmax, -1] = 1
                         else:
-                            fp[i] = fp[i] + 1
+                            fp[i] += 1
                     else:
-                        fp[i] = fp[i] + 1
+                        fp[i] += 1
 
 
             else:
-                fp[i] = fp[i] + len(rboxes[rbox_image])
+                fp[i] += len(rboxes[rbox_image][0]['bbox'])
         else:
             continue
     rec = np.zeros(len(rbox_images))
@@ -274,7 +292,7 @@ def eval(rboxes, gboxes, iou_th, use_07_metric):
 
 if __name__ == '__main__':
     img_num = 232
-    eval_dict_convert(img_num)
+    # eval_dict_convert(img_num)
 
     fr1 = open('predict_dict.pkl', 'r')
     fr2 = open('gtboxes_dict.pkl', 'r')
@@ -282,16 +300,29 @@ if __name__ == '__main__':
     predict_dict = pickle.load(fr1)
     gtboxes_dict = pickle.load(fr2)
 
-    rec, prec, ap = eval(predict_dict, gtboxes_dict, 0.5, False)
+    R, P, mAP, F = 0, 0, 0, 0
 
-    recall = rec[-1]
-    precision = prec[-1]
-    mAP = ap
-    F_measure = (2*precision*recall)/(recall+precision)
-    print('\nR:', recall)
-    print('P:', precision)
-    print('mAP:', mAP)
-    print('F:', F_measure)
+    for label in NAME_LABEL_MAP.keys():
+        if label == 'back_ground':
+            continue
+
+        rboxes, gboxes = get_single_label_dict(predict_dict, gtboxes_dict, label)
+
+        rec, prec, ap = eval(rboxes, gboxes, 0.5, False)
+
+        recall = rec[-1]
+        precision = prec[-1]
+        F_measure = (2*precision*recall)/(recall+precision)
+        print('\n{}\tR:{}\tP:{}\tap:{}\tF:{}'.format(label, recall, precision, ap, F_measure))
+        R += recall
+        P += precision
+        mAP += ap
+        F += F_measure
+    print('\n{}\tR:{}\tP:{}\tap:{}\tF:{}'.format('Final', R / cfgs.CLASS_NUM,
+                                                 P / cfgs.CLASS_NUM,
+                                                 mAP / cfgs.CLASS_NUM,
+                                                 F / cfgs.CLASS_NUM))
+
     fr1.close()
     fr2.close()
 
