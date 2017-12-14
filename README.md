@@ -33,16 +33,22 @@ VOCdevkit
   python convert_data_to_tfrecord.py --VOC_dir='***/VOCdevkit/VOCdevkit_train/' --save_name='train' --img_format='.jpg' --dataset='ship'
   ```
 
-# Demo   
+# Demo          
 1、Unzip the weight $FPN_ROOT/output/res101_trained_weights/*.rar    
 2、put images in $FPN_ROOT/tools/inference_image   
 3、Configure parameters in $FPN_ROOT/libs/configs/cfgs.py and modify the project's root directory 
-4、   
+4、image slice           
   ```Shell    
   cd $FPN_ROOT/tools
   python inference.py   
+  ```     
+5、big image      
+  ```Shell    
+  cd $FPN_ROOT/tools
+  python demo.py   
   ``` 
 
+  
 # Train
 1、Modify $FPN_ROOT/libs/lable_name_dict/***_dict.py, corresponding to the number of categories in the configuration file    
 2、download pretrain weight([resnet_v1_101_2016_08_28.tar.gz](http://download.tensorflow.org/models/resnet_v1_101_2016_08_28.tar.gz) or [resnet_v1_50_2016_08_28.tar.gz](http://download.tensorflow.org/models/resnet_v1_50_2016_08_28.tar.gz)) from [here](https://github.com/yangxue0827/models/tree/master/slim), then extract to folder $FPN_ROOT/data/pretrained_weights    
