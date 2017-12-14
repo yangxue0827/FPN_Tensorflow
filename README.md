@@ -45,7 +45,7 @@ VOCdevkit
 5、big image      
   ```Shell    
   cd $FPN_ROOT/tools
-  python demo.py   
+  python demo.py --src_folder=.\demo_src --des_folder=.\demo_des      
   ``` 
 
   
