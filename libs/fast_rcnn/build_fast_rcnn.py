@@ -265,7 +265,7 @@ class FastRCNN(object):
             tf.summary.image('/positive_proposals', positive_proposals_in_img)
             tf.summary.image('/negative_proposals', negative_proposals_in_img)
 
-            if cfgs.CLASS_NUM:
+            if cfgs.CLASS_NUM == 1:
                 minibatch_decode_boxes = encode_and_decode.decode_boxes(encode_boxes=minibatch_encode_boxes,
                                                                         reference_boxes=minibatch_reference_boxes,
                                                                         scale_factors=self.scale_factors)

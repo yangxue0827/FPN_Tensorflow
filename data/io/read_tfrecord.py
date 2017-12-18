@@ -64,7 +64,7 @@ def read_and_prepocess_single_img(filename_queue, shortside_len, is_training):
 
 
 def next_batch(dataset_name, batch_size, shortside_len, is_training):
-    if dataset_name not in ['airplane', 'SSDD', 'ship', 'pascal', 'coco']:
+    if dataset_name not in ['nwpu', 'airplane', 'SSDD', 'ship', 'pascal', 'coco']:
         raise ValueError('dataSet name must be in pascal or coco')
 
     if is_training:
