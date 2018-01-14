@@ -39,11 +39,11 @@ def short_side_resize(img_tensor, gtboxes_and_label, target_shortside_len):
 def short_side_resize_for_inference_data(img_tensor, target_shortside_len, is_resize=True):
     h, w, = tf.shape(img_tensor)[0], tf.shape(img_tensor)[1]
 
-    new_h, new_w = tf.cond(tf.less(h, w),
-                           true_fn=lambda: (target_shortside_len, target_shortside_len*w//h),
-                           false_fn=lambda: (target_shortside_len*h//w, target_shortside_len))
     img_tensor = tf.expand_dims(img_tensor, axis=0)
     if is_resize:
+        new_h, new_w = tf.cond(tf.less(h, w),
+                               true_fn=lambda: (target_shortside_len, target_shortside_len * w // h),
+                               false_fn=lambda: (target_shortside_len * h // w, target_shortside_len))
         img_tensor = tf.image.resize_bilinear(img_tensor, [new_h, new_w])
 
     return img_tensor  # [1, h, w, c]
