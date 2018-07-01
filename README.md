@@ -97,5 +97,5 @@ data path format  ($FPN_ROOT/data/io/divide_data.py)
 ![16](tools/test_result/02_fpn.jpg)      
 
 ## Note 
-This code works better when detecting single targets, but not suitable for multi-target detection tasks. Recommended improvement code: https://github.com/DetectionTeamUCAS   
+This code works better when detecting single targets, but not suitable for multi-target detection tasks. Recommended improved code: https://github.com/DetectionTeamUCAS   
     
