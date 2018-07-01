@@ -1,6 +1,6 @@
 # Feature Pyramid Networks for Object Detection        
 
-## Recommended improved code： https://github.com/DetectionTeamUCAS      
+## Recommend improved code： https://github.com/DetectionTeamUCAS      
         
 A Tensorflow implementation of FPN detection framework.    
 You can refer to the paper [Feature Pyramid Networks for Object Detection](https://arxiv.org/abs/1612.03144)    
@@ -97,5 +97,5 @@ data path format  ($FPN_ROOT/data/io/divide_data.py)
 ![16](tools/test_result/02_fpn.jpg)      
 
 ## Note 
-This code works better when detecting single targets, but not suitable for multi-target detection tasks. Recommended improved code: https://github.com/DetectionTeamUCAS   
+This code works better when detecting single targets, but not suitable for multi-target detection tasks. Recommend improved code: https://github.com/DetectionTeamUCAS   
     
